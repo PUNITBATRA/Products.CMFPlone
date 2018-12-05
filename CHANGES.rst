@@ -5,7 +5,15 @@
 Changelog
 =========
 
-5.2a1 (unreleased)
+.. You should *NOT* be adding new change log entries to this file.
+   You should create a file in the news directory instead.
+   For helpful instructions, please see:
+   https://github.com/plone/plone.releaser/blob/master/ADD-A-NEWS-ITEM.rst
+
+.. towncrier release notes start
+
+
+5.2a1 (2018-11-08)
 ------------------
 
 Breaking changes:
@@ -74,8 +82,21 @@ New features:
   in the generated package.json in compile_resources.py.
   [sunew]
 
+- Add utility-method safe_nativestring.
+  [pbauer]
+
+- Rename safe_unicode to safe_text and safe_encode to safe_bytes. Keep old aliases.
+  [pbauer]
+- Add a ``bin/instance verifydb`` command which can be used to check
+  that all records in the database can be successfully loaded.
+  This is intended to help with verifying a database conversion
+  from Python 2 to Python 3.
+  [davisagli]
 
 Bug fixes:
+
+- Modernize robot keywords that use "Get Element Attribute"
+  [ale-rt]
 
 - remove plone.app.folder dependency
   [petschki]
@@ -176,6 +197,9 @@ Breaking changes:
 
 - Remove ``plone-generate-gruntfile`` (it is all available through ``plone-compile-resources``).
   [jensens]
+
+- Migrate from ``slimit`` to ``calmjs.parse`` for the JavaScript cooker #2616
+  [metatoaster]
 
 
 New Features:
@@ -340,3 +364,6 @@ Bug Fixes:
 
 - Render tinymce attributes correctly in Python3.
   [sallner]
+
+- Remove unresolved dependencies of plone-final to cssregistry and jsregistry.
+  [pbauer]
